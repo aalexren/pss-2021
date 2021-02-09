@@ -19,7 +19,7 @@
 using namespace std;
 
 string read_text(const string& filename);
-unsigned int find_delimeter(const string& text);
+unsigned int find_delimiter(const string& text);
 void withdraw_words(const string& text, vector<string>& _owords);
 void get_sentences(const string& text, char del, vector<string>& _osentences);
 void strip(string& s);
@@ -29,7 +29,7 @@ int main() {
    string full_text = read_text("../input.txt"); // without indicated words
    vector<string> words; withdraw_words(full_text, words);
 
-   unsigned int del_index = find_delimeter(full_text);
+   unsigned int del_index = find_delimiter(full_text);
    full_text.erase(full_text.begin() + del_index, full_text.end());
 
 
@@ -52,7 +52,7 @@ int main() {
 }
 
 // read from the end of the text
-unsigned int find_delimeter(const string& text) {
+unsigned int find_delimiter(const string& text) {
    for (unsigned int i = text.length() - 1; i >= 0;) {
       if (isdigit(text[i])) {
          return i;
@@ -78,7 +78,7 @@ string read_text(const string& filename) {
 
 // get words we should uppercase
 void withdraw_words(const string& text, vector<string>& _owords) {
-   unsigned int del = find_delimeter(text);
+   unsigned int del = find_delimiter(text);
    string qwe;
    for (unsigned int i = del + 1; i < text.length(); ++i) {
       if (text[i] != '\n' && text[i] != '\0') { // do not read <newline> and <end_of_line>
