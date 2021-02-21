@@ -1,0 +1,9 @@
+text2.txt
+cmake-build-debug/
+.idea/
+Lab*/
+.DS_Store
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
