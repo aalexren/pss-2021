@@ -59,6 +59,8 @@ There are brief demonstration of getting access, changing rights and showing var
 
 For fire alarm event has been used Observer pattern, and every class predecessor of Room has to take in the FireAlarm object to have possibility to be notified.
 
+The room is open for everybody who has a higher or equal access level. (except director cabinet) 
+
 #### Dependencies
 - C++ 17
 - CMake 3.15
