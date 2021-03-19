@@ -1,5 +1,5 @@
 //
-// Created by Артём Черница on 24.02.21.
+// Created by Artyom Chernitsa on 23.02.21.
 //
 
 #ifndef HW2_CLASSROOM_H
@@ -9,7 +9,7 @@
 
 class ClassRoom : public Room {
 public:
-   explicit ClassRoom(const std::string& number);
+   explicit ClassRoom(const std::string& number, size_t floor, FireAlarm* fireAlarm);
 };
 
 #endif //HW2_CLASSROOM_H

@@ -18,6 +18,9 @@ add_executable(HW2 main.cpp
         users/Employee.h
         users/Director.cpp
         users/Director.h
+        users/Guest.h
+        users/Guest.cpp
+        users/IGetWages.h
 
         rooms/Room.h
         rooms/Room.cpp
@@ -30,4 +33,7 @@ add_executable(HW2 main.cpp
         rooms/Cabinet.cpp
         rooms/Cabinet.h
         rooms/DirectorCabinet.cpp
-        rooms/DirectorCabinet.h)
+        rooms/DirectorCabinet.h users/Guest.cpp users/Guest.h users/IGetWages.h events/FireAlarm.h
+
+        events/FireAlarm.h
+        events/FireAlarm.cpp events/Observer.h)

@@ -1,5 +1,5 @@
 //
-// Created by Артём Черница on 24.02.21.
+// Created by Artyom Chernitsa on 23.02.21.
 //
 
 #include "Employee.h"
@@ -21,4 +21,8 @@ Employee::Employee(const std::string& name,
 
 Laborathory Employee::getLaborathory() {
    return lab;
+}
+
+size_t Employee::getSalary() {
+   return salary;
 }

@@ -2,15 +2,15 @@
 ### Programming course assignment №2
 
 #### Simplifications and assumptions:  
-- We have next user types: students, professors, lab employees, director, admins.
-- We have rooms: class room, lecture room, conference room, cabinet, director cabinet.
+- We have next user types: students, professors, lab employees, isDirector, admins.
+- We have rooms: class room, lecture room, conference room, cabinet, isDirector cabinet.
 - We have next access level: green, yellow, red, no level
 - By default user has his access level for rooms but admins can grant additional custom access to any room.
 
 #### Requirements:
 - Use OOP.
-- Generate some users (at least 1 director, 2 admins, 4 professors, 8 employees, 16 students should exist in the system).
-- Show different examples of system usage in the main function.(For example: Professor Shilov trying to open director cabinet and got no access)
+- Generate some users (at least 1 isDirector, 2 admins, 4 professors, 8 employees, 16 students should exist in the system).
+- Show different examples of system usage in the main function.(For example: Professor Shilov trying to open isDirector cabinet and got no access)
 - Try to implement the system as real as you can. It means users has names, rooms has room numbers, professors have favorite joke. You can skip most unnecessary data (like photo), but add at least one to show that the system is real.
 - Use C++
 - Do not put all code in one file.
@@ -19,7 +19,7 @@
 
 #### The idea
 All the rooms inherit the Room class. Director's room has specific
-access function `giveAccess`, because there is only director in the university.
+access function `giveAccess`, because there is only isDirector in the university.
 All the rooms has following fields:
 - `getNumber()` => number of room
 - `getType()` => returns string: conference room, cabinet, etc. 
@@ -35,7 +35,7 @@ All the users have the following fields:
 - `getSalary()` => returns salary amount
 - `getID()` => field with unique value to avoid collisions
 - `getInfo()` => returns a descrtiption of mani user's data
-- `amIDirector()` => special field to check if user is director
+- `amIDirector()` => special field to check if user is isDirector
 
 The idea is pretty simple. Only field every Room and User has is Admin friend variable.
 It should be used to get access to private fields and manipulate with lists of granted users.

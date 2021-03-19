@@ -1,5 +1,5 @@
 //
-// Created by Артём Черница on 23.02.21.
+// Created by Artyom Chernitsa on 23.02.21.
 //
 
 #include <string>
@@ -33,7 +33,11 @@ bool Room::giveAccess(User& user) {
          return true;
       }
    }
-   if (accessLevel == user.getAccessLevel()) {
+   // <= or == that is the question ? O_o
+   if (accessLevel <= user.getAccessLevel()) {
+      std::cout << user.getName() + " -> access allowed " + this->getNumber() << std::endl;
+   }
+   else if (user.getAccessLevel() >= accessLevel && this->floor == 1) {
       std::cout << user.getName() + " -> access allowed " + this->getNumber() << std::endl;
    }
    else {
@@ -43,10 +47,13 @@ bool Room::giveAccess(User& user) {
    return accessLevel == user.getAccessLevel();
 }
 
-Room::Room(const std::string& number, const std::string& type, AccessLevel accessLevel) {
+Room::Room(const std::string& number, const std::string& type, AccessLevel accessLevel, size_t floor, FireAlarm* fireAlarm)
+          : Observer (fireAlarm) {
    this->number = number;
    this->type = type;
    this->accessLevel = accessLevel;
+   this->defaultAccessLevel_ = accessLevel;
+   this->floor = floor;
 }
 
 void Room::addGrantedUser(User& user) {
@@ -63,4 +70,33 @@ void Room::removeGrantedUser(User& user) {
          return;
       }
    }
+}
+
+void Room::update() {
+   if (getSubject()->getFireAlarmStatus()) {
+      accessLevel = AccessLevel::NO_LEVEL;
+   }
+   else {
+      accessLevel = defaultAccessLevel_;
+   }
+}
+
+std::string Room::accessLevelToString() {
+   if (accessLevel == AccessLevel::NO_LEVEL) {
+      return "NO_LEVEL";
+   }
+   if (accessLevel == AccessLevel::BLUE) {
+      return "BLUE";
+   }
+   if (accessLevel == AccessLevel::GREEN) {
+      return "GREEN";
+   }
+   if (accessLevel == AccessLevel::YELLOW) {
+      return "YELLOW";
+   }
+   if (accessLevel == AccessLevel::RED) {
+      return "RED";
+   }
+
+   return "NO_LEVEL";
 }

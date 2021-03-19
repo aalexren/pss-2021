@@ -1,5 +1,5 @@
 //
-// Created by Артём Черница on 24.02.21.
+// Created by Artyom Chernitsa on 23.02.21.
 //
 
 #include <string>
@@ -37,4 +37,8 @@ std::vector<std::string> Professor::getSubjects() {
 
 std::string Professor::getInfo() {
    return User::getInfo() + "My favourite joke is: " + this->getJoke() + "\n";
+}
+
+size_t Professor::getSalary() {
+   return salary;
 }

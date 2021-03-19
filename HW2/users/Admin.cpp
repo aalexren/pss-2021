@@ -1,5 +1,5 @@
 //
-// Created by Артём Черница on 24.02.21.
+// Created by Artyom Chernitsa on 23.02.21.
 //
 
 #include <iostream>
@@ -17,7 +17,8 @@ Admin::Admin(const std::string& name,
 
 void Admin::upgradeAccess(User& user) {
    switch (user.accessLevel) {
-      case AccessLevel::NO_LEVEL: user.accessLevel = AccessLevel::GREEN; break;
+      case AccessLevel::NO_LEVEL: user.accessLevel = AccessLevel::BLUE; break;
+      case AccessLevel::BLUE: user.accessLevel = AccessLevel::GREEN; break;
       case AccessLevel::GREEN: user.accessLevel = AccessLevel::YELLOW; break;
       case AccessLevel::YELLOW: user.accessLevel = AccessLevel::RED; break;
       case AccessLevel::RED: user.accessLevel = AccessLevel::RED; break;
@@ -33,4 +34,8 @@ void Admin::giveAccess(User& user, Room& room) {
 void Admin::depriveAccess(User& user, Room& room) {
    room.removeGrantedUser(user);
    std::cout << "Access taken back to " + user.getName() + " for " + room.getNumber() + " room" << std::endl;
+}
+
+size_t Admin::getSalary() {
+   return salary;
 }

@@ -1,9 +1,9 @@
 //
-// Created by Артём Черница on 24.02.21.
+// Created by Artyom Chernitsa on 24.02.21.
 //
 
 #include "Cabinet.h"
 
-Cabinet::Cabinet(const std::string& number)
-      : Room(number, "classroom", AccessLevel::YELLOW) {
+Cabinet::Cabinet(const std::string& number, size_t floor, FireAlarm* fireAlarm)
+      : Room(number, "classroom", AccessLevel::YELLOW, floor, fireAlarm) {
 }

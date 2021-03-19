@@ -1,5 +1,5 @@
 //
-// Created by Артём Черница on 24.02.21.
+// Created by Artyom Chernitsa on 23.02.21.
 //
 
 #include <string>
@@ -32,4 +32,8 @@ std::string Student::getGroup() {
 
 double Student::getGPA() {
    return gpa;
+}
+
+size_t Student::getSalary() {
+   return salary;
 }

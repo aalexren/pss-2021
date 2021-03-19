@@ -1,5 +1,5 @@
 //
-// Created by Артём Черница on 24.02.21.
+// Created by Artyom Chernitsa on 23.02.21.
 //
 
 #include <iostream>
@@ -8,8 +8,8 @@
 
 #include "../users/Director.h"
 
-DirectorCabinet::DirectorCabinet(const std::string& number)
-      : Room(number, "director cabinet", AccessLevel::RED) {
+DirectorCabinet::DirectorCabinet(const std::string& number, size_t floor, FireAlarm* fireAlarm)
+      : Room(number, "isDirector cabinet", AccessLevel::RED, floor, fireAlarm) {
 }
 
 bool DirectorCabinet::giveAccess(User& user) {
