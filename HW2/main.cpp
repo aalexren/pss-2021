@@ -9,6 +9,8 @@
 #include "users/Employee.h"
 #include "users/Professor.h"
 #include "users/Student.h"
+#include "users/Guest.h"
+#include "events/FireAlarm.h"
 
 int main() {
    // ------------------------ CREATE USERS ------------------------- //
@@ -52,24 +54,31 @@ int main() {
    Student stu_seva("Seva Klushev", "kiaver", 1000, "B20-02", 4.8);
    Student stu_tasneem("Tasneem Talooba", "tasneem", 1000, "B19-02", 5.0);
    Student stu_rick("Rick Sanchez", "sanchezzzz", 10000000, "M00-01", 6.0);
+
+   Guest guest_1("Mark Shagal");
+   Guest guest_2("Monica Bellucci");
+   // --------------------------------------------------------------- //
+
+   // ---------------------------- EVENT ---------------------------- //
+   FireAlarm* fireAlarm = new FireAlarm();
    // --------------------------------------------------------------- //
 
    // ------------------------ CREATE ROOMS ------------------------- //
-   Cabinet cab_1("100-1");
-   Cabinet cab_2("100-2");
-   Cabinet cab_3("100-3");
+   Cabinet cab_1("100-1", 1, fireAlarm);
+   Cabinet cab_2("100-2", 1, fireAlarm);
+   Cabinet cab_3("100-3", 1, fireAlarm);
 
-   ClassRoom classRoom313("313");
-   ClassRoom classRoom303("303");
+   ClassRoom classRoom313("313", 3, fireAlarm);
+   ClassRoom classRoom303("303", 3, fireAlarm);
 
-   ConferenceRoom conferenceRoom("B-15");
+   ConferenceRoom conferenceRoom("B-15", 4, fireAlarm);
+   ConferenceRoom conferenceRoom2("A-143", 1, fireAlarm);
 
-   DirectorCabinet directorCabinet("A-1");
+   DirectorCabinet directorCabinet("A-1", 1, fireAlarm);
 
-   LectureRoom lectureRoom108("108");
-   LectureRoom lectureRoom107("107");
+   LectureRoom lectureRoom108("108", 1, fireAlarm);
+   LectureRoom lectureRoom107("107", 1, fireAlarm);
    // --------------------------------------------------------------- //
-
 
    std::cout << director_ronaldMorin.getInfo();
    directorCabinet.giveAccess(director_ronaldMorin);
@@ -113,6 +122,33 @@ int main() {
    admin_denis.depriveAccess(stu_else, lectureRoom107);
    lectureRoom107.giveAccess(stu_else);
    std::cout << std::endl;
+
+   std::cout << guest_1.getInfo();
+   classRoom303.giveAccess(guest_1);
+   lectureRoom108.giveAccess(guest_1);
+   admin_allan.giveAccess(guest_1, classRoom303);
+   classRoom303.giveAccess(guest_1);
+   std::cout << std::endl;
+
+   fireAlarm->startFireAlarm(); std::cout << "Fire is started" << std::endl;
+   std::cout << lectureRoom107.accessLevelToString() << std::endl;
+   classRoom303.giveAccess(guest_1);
+   std::cout << lectureRoom108.accessLevelToString() << std::endl;
+   lectureRoom108.giveAccess(emp_adela);
+   std::cout << directorCabinet.accessLevelToString() << std::endl;
+   directorCabinet.giveAccess(guest_2);
+   std::cout << conferenceRoom.accessLevelToString() << std::endl;
+   conferenceRoom.giveAccess(prof_hafsah);
+   std:: cout << std::endl; fireAlarm->stopFireAlarm(); std::cout << "Fire is gone" << std::endl;
+   std::cout << lectureRoom107.accessLevelToString() << std::endl;
+   classRoom303.giveAccess(guest_1);
+   std::cout << lectureRoom108.accessLevelToString() << std::endl;
+   lectureRoom108.giveAccess(emp_adela);
+   std::cout << directorCabinet.accessLevelToString() << std::endl;
+   directorCabinet.giveAccess(guest_2);
+   std::cout << conferenceRoom.accessLevelToString() << std::endl;
+   conferenceRoom.giveAccess(prof_hafsah);
+
 
    return 0;
 }

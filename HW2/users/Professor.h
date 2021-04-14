@@ -1,5 +1,5 @@
 //
-// Created by Артём Черница on 24.02.21.
+// Created by Artyom Chernitsa on 23.02.21.
 //
 
 #ifndef HW2_PROFESSOR_H
@@ -9,8 +9,9 @@
 #include <vector>
 
 #include "User.h"
+#include "IGetWages.h"
 
-class Professor : public User {
+class Professor : public User, public IGetWages {
 public:
    Professor(const std::string& name,
            const std::string& alias,
@@ -27,7 +28,9 @@ public:
 
    std::vector<std::string> getSubjects();
 
-   std::string getInfo();
+   std::string getInfo() override;
+
+   size_t getSalary() override;
 
 private:
    std::string joke; // favourite joke

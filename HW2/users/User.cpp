@@ -1,5 +1,5 @@
 //
-// Created by Артём Черница on 23.02.21.
+// Created by Artyom Chernitsa on 23.02.21.
 //
 
 #include <string>
@@ -21,21 +21,21 @@ AccessLevel User::getAccessLevel() {
    return accessLevel;
 }
 
-size_t User::getSalary() {
-   return salary;
-}
+//size_t User::getSalary() {
+//   return salary;
+//}
 
 size_t User::getID() {
    return id;
 }
 
 std::string User::getInfo() {
-   return "I am " + name + ", my alias is: " + alias + "." + "\n"
+   return "I am " + name + ", my alias is: " + (!alias.empty() ? alias : "<absent>") + "." + "\n"
           + "I have an " + accessLevelToString() + " access level.\n";
 }
 
 bool User::amIDirector() {
-   return director;
+   return isDirector;
 }
 
 User::User(const std::string& name, const std::string& alias, AccessLevel accessLevel, size_t salary) : User() {
@@ -43,14 +43,20 @@ User::User(const std::string& name, const std::string& alias, AccessLevel access
    this->alias = alias;
    this->accessLevel = accessLevel;
    this->salary = salary;
-   director = false;
+   isDirector = false;
 }
 
 User::User(const std::string& name, AccessLevel accessLevel, size_t salary) : User() {
    this->name = name;
    this->accessLevel = accessLevel;
    this->salary = salary;
-   director = false;
+   isDirector = false;
+}
+
+User::User(const std::string& name, AccessLevel accessLevel) : User() {
+   this->name = name;
+   this->accessLevel = accessLevel;
+   isDirector = false;
 }
 
 User::User() {
@@ -59,12 +65,15 @@ User::User() {
    static size_t call = 0; // make unique ID
    call++;
    id = call;
-   director = false;
+   isDirector = false;
 }
 
 std::string User::accessLevelToString() {
    if (accessLevel == AccessLevel::NO_LEVEL) {
       return "NO_LEVEL";
+   }
+   if (accessLevel == AccessLevel::BLUE) {
+      return "BLUE";
    }
    if (accessLevel == AccessLevel::GREEN) {
       return "GREEN";

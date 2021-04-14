@@ -1,5 +1,5 @@
 //
-// Created by Артём Черница on 23.02.21.
+// Created by Artyom Chernitsa on 23.02.21.
 //
 
 #ifndef HW2_USER_H
@@ -18,7 +18,7 @@ public:
 
    AccessLevel getAccessLevel();
 
-   size_t getSalary();
+//   size_t getSalary();
 
    size_t getID();
 
@@ -31,14 +31,17 @@ protected:
 
    User(const std::string& name, AccessLevel accessLevel, size_t salary);
 
-   bool director; // is this user director?
+   User(const std::string& name, AccessLevel accessLevel);
+
+   bool isDirector; // is this user isDirector?
+
+   size_t salary;
 
 private:
    User();
    std::string name; // first name, second name
    std::string alias; // telegram alias
    AccessLevel accessLevel;
-   size_t salary;
    size_t id; // unique ID for certain user
    friend class Admin; // special field to get access to private members of this class
 

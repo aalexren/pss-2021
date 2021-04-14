@@ -1,5 +1,5 @@
 //
-// Created by Артём Черница on 24.02.21.
+// Created by Artyom Chernitsa on 23.02.21.
 //
 
 #ifndef HW2_STUDENT_H
@@ -8,8 +8,9 @@
 #include <string>
 
 #include "User.h"
+#include "IGetWages.h"
 
-class Student : public User {
+class Student : public User, public IGetWages {
 public:
    Student(const std::string& name,
            const std::string& alias,
@@ -25,6 +26,8 @@ public:
    std::string getGroup();
 
    double getGPA();
+
+   size_t getSalary() override;
 
 private:
    std::string group;
