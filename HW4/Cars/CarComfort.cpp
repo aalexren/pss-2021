@@ -4,7 +4,7 @@
 
 #include "CarComfort.h"
 
-CarComfort::CarComfort(std::string &model, std::string &number, Colors color) : Car(model, number, color) {
+CarComfort::CarComfort(const std::string &model, const std::string &number, Colors color) : Car(model, number, color) {
    this->CPM = CPM * 2;
    this->freeBottleOfWater = rand()%10;
 }

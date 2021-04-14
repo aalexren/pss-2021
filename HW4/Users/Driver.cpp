@@ -12,9 +12,9 @@ std::string Driver::toString() {
           "]";
 }
 
-Driver::Driver(std::string &name, std::string &phoneNumber, std::string &password, double rating) : User(name,
+Driver::Driver(const std::string &name, const std::string &phoneNumber, const std::string &password, double rating, Car* car) : User(name,
                                                                                                          phoneNumber,
                                                                                                          password,
                                                                                                          rating) {
-
+   this->car = car;
 }

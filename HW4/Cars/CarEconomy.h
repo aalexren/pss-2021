@@ -9,7 +9,7 @@
 
 class CarEconomy : public Car {
 public:
-   CarEconomy(std::string &model, std::string &number, Colors color);
+   CarEconomy(const std::string &model, const std::string &number, Colors color);
 };
 
 #endif //HW4_CARECONOMY_H

@@ -4,6 +4,6 @@
 
 #include "CarStandard.h"
 
-CarStandard::CarStandard(std::string &model, std::string &number, Colors color) : Car(model, number, color) {
+CarStandard::CarStandard(const std::string &model, const std::string &number, Colors color) : Car(model, number, color) {
 
 }

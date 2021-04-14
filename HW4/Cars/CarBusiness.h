@@ -11,7 +11,7 @@
 
 class CarBusiness : public Car {
 public:
-   CarBusiness(std::string &model, std::string &number, Colors color);
+   CarBusiness(const std::string &model, const std::string &number, Colors color);
 
    void parkRightInFrontOfEntrance();
 };

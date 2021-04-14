@@ -4,6 +4,6 @@
 
 #include "CarEconomy.h"
 
-CarEconomy::CarEconomy(std::string &model, std::string &number, Colors color) : Car(model, number, color) {
+CarEconomy::CarEconomy(const std::string &model, const std::string &number, Colors color) : Car(model, number, color) {
    this->CPM = CPM * 0.85;
 }

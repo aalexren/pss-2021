@@ -9,7 +9,7 @@
 
 class CarComfort : public Car {
 public:
-   CarComfort(std::string &model, std::string &number, Colors color);
+   CarComfort(const std::string &model, const std::string &number, Colors color);
 private:
    int freeBottleOfWater; // count in the car
 };

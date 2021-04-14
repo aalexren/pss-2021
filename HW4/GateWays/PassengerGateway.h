@@ -12,6 +12,8 @@
 
 class PassengerGateway {
 public:
+   PassengerGateway(Wendex* wendex);
+
    void login(Passenger *psngr, std::string &phoneNumber, std::string &password);
    void seeOrderHistory(Passenger& psngr);
    void updatePaymentMethods(Passenger& psngr);

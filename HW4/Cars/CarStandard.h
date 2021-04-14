@@ -9,7 +9,7 @@
 
 class CarStandard : public Car {
 public:
-   CarStandard(std::string &model, std::string &number, Colors color);
+   CarStandard(const std::string &model, const std::string &number, Colors color);
 };
 
 #endif //HW4_CARSTANDARD_H

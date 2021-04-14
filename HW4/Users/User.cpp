@@ -6,7 +6,7 @@
 
 #include "User.h"
 
-User::User(std::string &name, std::string &phoneNumber, std::string &password, double rating) {
+User::User(const std::string &name, const std::string &phoneNumber, const std::string &password, double rating) {
    this->name = name;
    this->phoneNumber = phoneNumber;
    this->password = password;

@@ -4,6 +4,10 @@
 
 #include "PassengerGateway.h"
 
+PassengerGateway::PassengerGateway(Wendex* wendex) {
+   this->wendex = wendex;
+}
+
 void PassengerGateway::login(Passenger *psngr, std::string& phoneNumber, std::string& password) {
    wendex->login(psngr, phoneNumber, password);
 }

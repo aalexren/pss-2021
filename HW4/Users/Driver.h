@@ -15,7 +15,7 @@ enum WorkStatus {
 
 class Driver : public User {
 public:
-   Driver(std::string &name, std::string &phoneNumber, std::string &password, double rating);
+   Driver(const std::string &name, const std::string &phoneNumber, const std::string &password, double rating, Car *car);
 
    std::string toString();
    WorkStatus getWorkStatus();

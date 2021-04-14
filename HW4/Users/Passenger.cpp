@@ -8,7 +8,7 @@ std::string Passenger::toString() {
    return User::toString();
 }
 
-Passenger::Passenger(std::string &name, std::string &phoneNumber, std::string &password, double rating) : User(name,
+Passenger::Passenger(const std::string &name, const std::string &phoneNumber, const std::string &password, double rating) : User(name,
                                                                                                                phoneNumber,
                                                                                                                password,
                                                                                                                rating) {

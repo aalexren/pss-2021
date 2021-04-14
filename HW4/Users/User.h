@@ -9,7 +9,7 @@
 
 class User {
 public:
-   User(std::string &name, std::string &phoneNumber, std::string &password, double rating);
+   User(const std::string &name, const std::string &phoneNumber, const std::string &password, double rating);
 
    std::string getName();
    std::string getPhoneNumber();
