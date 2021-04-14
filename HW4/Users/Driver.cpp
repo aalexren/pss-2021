@@ -18,3 +18,7 @@ Driver::Driver(const std::string &name, const std::string &phoneNumber, const st
                                                                                                          rating) {
    this->car = car;
 }
+
+WorkStatus Driver::getWorkStatus() {
+   return WorkStatus::Free;
+}

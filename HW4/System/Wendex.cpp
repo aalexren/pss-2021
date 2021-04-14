@@ -52,7 +52,7 @@ Address Wendex::getCoordinates() {
 }
 
 std::string Wendex::getBill(Passenger &passenger, Order order) {
-   return ;
+   return order.toString();
 }
 
 

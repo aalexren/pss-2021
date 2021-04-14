@@ -39,7 +39,7 @@ void PassengerGateway::updatePinnedAddresses(Passenger &psngr) {
 void PassengerGateway::orderRide(Passenger &psngr) {
    if (wendex->isLogined(psngr)) {
       // TODO: create pre-order
-      PreOrder preoder;
+      PreOrder preOrder;
       wendex->orderRide(psngr, preOrder);
       // automatically added the order to the history of the user
    }
