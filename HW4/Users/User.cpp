@@ -11,6 +11,15 @@ User::User(const std::string &name, const std::string &phoneNumber, const std::s
    this->phoneNumber = phoneNumber;
    this->password = password;
    this->rating = rating;
+   static long long int id = 0;
+   this->ID = id++;
+}
+
+User::User(const std::string &name, const std::string &phoneNumber, const std::string &password) {
+   this->name = name;
+   this->phoneNumber = phoneNumber;
+   this->password = password;
+   this->rating = -1;
 }
 
 std::string User::getName() {
@@ -30,8 +39,12 @@ double User::getRating() {
 }
 
 std::string User::toString() {
-   return "User:[" + name + "," +
+   return "[" + name + "," +
                      phoneNumber + "," +
                      std::to_string(rating) +
                "]";
+}
+
+std::string User::getID() {
+   return std::to_string(ID);
 }

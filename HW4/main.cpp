@@ -1,13 +1,15 @@
 #include <iostream>
 
-#include "../temp/System/Wendex.h"
-#include "../temp/System/Address.h"
+#include "System/Wendex.h"
+#include "System/Address.h"
 
-#include "../temp/Cars/CarStandard.h"
-#include "../temp/Cars/CarBusiness.h"
+#include "Cars/CarStandard.h"
+#include "Cars/CarBusiness.h"
 
-#include "../temp/GateWays/DriverGateway.h"
-#include "../temp/GateWays/PassengerGateway.h"
+#include "GateWays/DriverGateway.h"
+#include "GateWays/PassengerGateway.h"
+
+#include "Cars/CarType.h"
 
 using namespace std;
 
@@ -26,11 +28,19 @@ int main() {
 
    DriverGateway dgt(&wendex);
    PassengerGateway pgw(&wendex);
+   PassengerGateway pgw2(&wendex);
+   PassengerGateway pgw3(&wendex);
 
    pgw.login(&p1, (string &) "+79645266767", (string &) "password");
    dgt.login(&d1, (string &) "+79998967878", (string &) "12345678");
 
    pgw.seeOrderHistory(p1);
+
+   pgw2.login(&p1, (string &) "+79645266767", (string &) "password");
+   pgw3.login(&p1, (string &) "+79645266767", (string &) "password");
+
+   pgw.login(&p1, (string &) "+79645266767", (string &) "password");
+   pgw.orderRide(p1, a, b, CarType::Business);
 
    return 0;
 }

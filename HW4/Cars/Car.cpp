@@ -11,4 +11,5 @@ Car::Car(const std::string &model, const std::string &number, Colors color) {
    // TODO
    this->currentAddress = new Address("Innopolis", "Universitetskaya"); // crutch
    this->CPM = 5;
+   this->ridesCount = 0;
 }

@@ -32,6 +32,7 @@ private:
    std::string number;
    Colors color;
    Address* currentAddress;
+   int ridesCount;
 };
 
 #endif //HW4_CAR_H

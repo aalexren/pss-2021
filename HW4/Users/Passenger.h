@@ -18,6 +18,7 @@ enum PaymentMethods {
 class Passenger : public User {
 public:
    Passenger(const std::string &name, const std::string &phoneNumber, const std::string &password, double rating);
+   Passenger() {};
 
    std::string toString();
 

@@ -16,9 +16,20 @@ Driver::Driver(const std::string &name, const std::string &phoneNumber, const st
                                                                                                          phoneNumber,
                                                                                                          password,
                                                                                                          rating) {
-   this->car = car;
+   this->cars.push_back(car);
+}
+
+Driver::Driver(const std::string &name, const std::string &phoneNumber, const std::string &password, double rating, std::vector<Car*> cars) : User(name,
+                                                                                                                                     phoneNumber,
+                                                                                                                                     password,
+                                                                                                                                     rating) {
+   this->cars = cars;
 }
 
 WorkStatus Driver::getWorkStatus() {
    return WorkStatus::Free;
+}
+
+std::vector<Car *> Driver::getCars() {
+   return cars;
 }

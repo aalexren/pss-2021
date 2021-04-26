@@ -8,7 +8,6 @@
 #include "../System/Address.h"
 #include "../Users/Passenger.h"
 #include "../System/Wendex.h"
-#include "../System/PreOrder.h"
 
 class PassengerGateway {
 public:
@@ -19,7 +18,7 @@ public:
    void updatePaymentMethods(Passenger& psngr);
    void updatePinnedAddresses(Passenger& psngr);
 
-   void orderRide(Passenger &psngr);
+   void orderRide(Passenger &psngr, Address from, Address to, CarType carType);
 
    Address getCoordinates(Passenger &psngr); // coordinates of the car during the current ride
    std::string getBill(Passenger &psngr, Order &order);

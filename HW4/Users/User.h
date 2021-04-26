@@ -10,11 +10,16 @@
 class User {
 public:
    User(const std::string &name, const std::string &phoneNumber, const std::string &password, double rating);
+   User(const std::string &name, const std::string &phoneNumber, const std::string &password);
+
+   User() {};
 
    std::string getName();
    std::string getPhoneNumber();
    std::string getPassword();
    double getRating();
+
+   std::string getID();
 
    virtual std::string toString();
 
@@ -23,6 +28,7 @@ private:
    std::string phoneNumber;
    std::string password;
    double rating;
+   long long int ID;
 };
 
 #endif //HW4_USER_H

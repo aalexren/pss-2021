@@ -19,4 +19,4 @@ add_executable(HW4 main.cpp
         GateWays/PassengerGateway.cpp GateWays/PassengerGateway.h
         GateWays/DriverGateway.cpp GateWays/DriverGateway.h
         System/Wendex.cpp System/Wendex.h
-        System/PreOrder.cpp System/PreOrder.h)
+        GateWays/AdminGateway.cpp GateWays/AdminGateway.h Users/Admin.cpp Users/Admin.h Cars/CarType.cpp Cars/CarType.h)

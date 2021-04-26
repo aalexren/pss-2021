@@ -36,11 +36,9 @@ void PassengerGateway::updatePinnedAddresses(Passenger &psngr) {
    }
 }
 
-void PassengerGateway::orderRide(Passenger &psngr) {
+void PassengerGateway::orderRide(Passenger &psngr, Address from, Address to, CarType carType) {
    if (wendex->isLogined(psngr)) {
-      // TODO: create pre-order
-      PreOrder preOrder;
-      wendex->orderRide(psngr, preOrder);
+      wendex->orderRide(psngr, from, to, carType);
       // automatically added the order to the history of the user
    }
 }

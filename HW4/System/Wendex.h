@@ -6,12 +6,13 @@
 #define HW4_WENDEX_H
 
 #include <vector>
+#include <iostream>
 
 #include "../Users/User.h"
 #include "../Users/Driver.h"
 #include "../Users/Passenger.h"
 #include "Order.h"
-#include "PreOrder.h"
+#include "../Cars/CarType.h"
 
 class Wendex {
 public:
@@ -24,7 +25,7 @@ public:
    std::vector<Order*> seeOrderHistory(Passenger& passenger);
    void updatePaymentMethods(Passenger& passenger, PaymentMethods method);
    void updatePinnedAddress(Passenger& passenger, Address address);
-   void orderRide(Passenger& passenger, PreOrder preOrder);
+   void orderRide(Passenger& passenger, Address from, Address to, CarType carType);
    Address getCoordinates();
    std::string getBill(Passenger &passenger, Order order);
 
@@ -36,6 +37,8 @@ public:
 
 private:
    std::vector<User*> loginedUsers;
+   std::vector<Driver*> loginedDrivers;
+   std::vector<Passenger*> loginedPassengers;
    std::vector<Order*> orders;
 };
 

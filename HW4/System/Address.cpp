@@ -33,9 +33,9 @@ std::string Address::getStreet() {
 }
 
 std::string Address::toString() {
-   return "Address:[" + city + "," +
-                        street + "," +
-                        std::to_string(longitude) + "," +
-                        std::to_string(latitude) +
-                  "]";
+   return "[" + city + "," +
+                  street + "," +
+                  std::to_string(longitude) + "," +
+                  std::to_string(latitude) +
+            "]";
 }

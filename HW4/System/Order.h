@@ -8,21 +8,26 @@
 #include "Date.h"
 #include "Address.h"
 
-class Passenger; //#include "Passenger.h"
-class Driver; //#include "Driver.h"
+#include "../Users/User.h"
+
+//class Passenger; //#include "Passenger.h"
+//class Driver; //#include "Driver.h"
+//
+//#include "../Users/Passenger.h"
+//#include "../Users/Driver.h"
 
 class Order {
 public:
    Order();
    std::string toString();
 
-   Date startDate;
-   Date endDate;
-   int expectedTime;
-   Address startAddress;
-   Address endAddress;
-   Passenger* passenger; // to save ID in database
-   Driver* driver; // to save ID in database
+   Date* startDate;
+   Date* endDate;
+   Date* expectedTime;
+   Address* startAddress;
+   Address* endAddress;
+   User* passenger; // to save ID in database
+   User* driver; // to save ID in database
    double totalCost;
    double distance;
    int id; // unique key
